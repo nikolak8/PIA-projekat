@@ -1,0 +1,19 @@
+export class Korisnik{
+   _id:string
+   ime:string
+   prezime:string
+   korisnickoIme:string
+   lozinka:string
+   tip:number
+   telefon:string
+   email:string
+   slika:string
+   nazivOrganizacije:string
+   drzavaOrganizacije:string
+   gradOrganizacije:string
+   postanskiBroj:string
+   ulicaOrganizacije:string
+   brojUlice:number
+   maticniBrojOrg:string
+   status:string
+}

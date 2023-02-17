@@ -1,0 +1,69 @@
+
+<div class="navbar">
+    <div class="navig">
+        <span><a routerLink="/">Pocetna</a></span>
+        <span><a routerLink="/prijava">Prijavi se</a></span>
+        <span><a routerLink="/registracija">Registruj se</a></span>
+    </div>
+</div> 
+
+
+    <h1 class = 'naslov'>Aktuelne radionice</h1>
+    <form>
+        <div class="opt">
+        <input type="text" [(ngModel)]="naziv" name="naziv" placeholder="Unesite naziv...">
+        <input  type="text" [(ngModel)]="mesto" name="mesto" placeholder="Unesite mesto...">
+        <button name="pretraga" mat-raised-button color="primary" (click)="pretrazi()">Pretrazi</button>
+        <span class="empty"></span>
+        <span *ngIf="pretraga == true" class="sort" >Sortiraj:</span>
+        <select *ngIf="pretraga == true" name="sortiranje" id="sortiranje" [(ngModel)]="sortiranje" class="sort">
+            <option value="datum">Datum</option>
+            <option value="naziv">Naziv</option>
+        </select>
+        <button *ngIf="pretraga == true" name="sortiraj" mat-raised-button color="primary" (click)="sortiraj()" class="sort">Sortiraj</button>
+        <span class="sort">Top 5:</span>
+        <button  name="sortiraj" mat-raised-button color="primary" (click)="prikaziTop()" class="sort">Top 5</button>
+    </div>
+    </form>
+<div class = 'content'>
+<mat-tab-group>
+   <mat-tab class="tb">
+    <div *ngIf = "radionice?.length > 0" class="tab-content">
+        <div *ngFor="let r of radionice" class="tbr">
+            
+                <table class="table">
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Opis</th>
+                        <th>Mesto</th>
+                        <th>Datum</th>
+                        <th>Fotografija</th>
+                    </tr>
+                    <tr>
+                        <td class="b"><span>{{r.naziv}}</span></td>
+                        <td class="b">{{r.opis}}</td>
+                        <td class="b">{{r.mesto}}</td>
+                        <td class="b">{{r.datum|date:'yyyy-MM-dd'}}</td>
+                        <td>
+                            <img src="assets/{{r.glavnaSlika}}"  alt=""> 
+                        </td>
+                    </tr>
+                </table>
+            <hr>
+        </div>
+    </div> 
+   </mat-tab>
+</mat-tab-group>
+<div *ngIf = "radionice?.length == 0">
+    <h2>Ne postoji radionica.</h2>
+</div>
+</div>
+
+<div class="foot">
+<footer class="footer">
+    <p class="ft">
+        Copyright Nikola Krstic
+    </p>
+</footer> 
+</div>
+

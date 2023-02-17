@@ -1,0 +1,33 @@
+
+<div class="navbar">
+    <div class="navig">
+        <span><a routerLink="/">Pocetna</a></span>
+        <span><a routerLink="/prijava">Prijavi se</a></span>
+        <span><a routerLink="/registracija">Registruj se</a></span>
+    </div>
+</div> 
+
+<div class="content">
+    <h1>Prijava</h1>
+    <form>
+        <input type="text" [(ngModel)]="korisnickoIme" name="korisnickoIme" placeholder="Unesite korisnicko ime..." required="true">
+        <br>
+        <input  type="password" [(ngModel)]="lozinka" name="lozinka" placeholder="Unesite lozinku..." required="true">
+        <br>
+    </form>
+    
+    <button name="loginButton" mat-raised-button color="primary" (click)="prijavaAdmin()">Prijavi se</button>
+    <br>
+    <span class="poruka">{{poruka}}</span>
+</div>
+
+<div class="foot">
+<footer class="footer">
+    <p class="ft">
+        Copyright Nikola Krstic
+    </p>
+</footer> 
+</div>
+
+
+

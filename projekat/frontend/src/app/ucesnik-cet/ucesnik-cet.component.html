@@ -1,0 +1,82 @@
+<header class="p-3 header">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+  
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/ucesnik" class="nav-link px-2 text-white">Pocetna</a></li>
+        <li>
+          <div ngbDropdown class="d-inline-block">
+              <a id="dropdownBasic1" ngbDropdownToggle>
+                  Profil
+              </a>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <a routerLink="/ucesnik/mojProfil">Moj profil</a>
+                  <a routerLink="/ucesnik/mojeRadionice">Moje radionice</a>
+                  <a routerLink="/ucesnik/akcije">Moje akcije</a>
+                  <a routerLink="/ucesnik/svePoruke">Moje poruke</a>
+              </div>
+          </div>
+        </li>
+        <li><a routerLink="/ucesnik/sveRadionice" class="nav-link px-2 text-white">Radionice</a></li>
+        <li><a routerLink="/ucesnik/postaniOrganizator" class="nav-link px-2 text-white">Postani organizator</a></li>
+        <li><a routerLink="" (click) = "odjaviSe()" class="nav-link px-2 text-white">Odjavi se</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+  <div class="container">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card chat-app">
+                <div class="chat">
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a>
+                                    <img src="assets/{{organizator.slika}}" alt="avatar">
+                                </a>
+                                <div class="chat-about">
+                                    <h6 class="m-b-0">{{organizator.ime}} {{organizator.prezime}}</h6>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                    <div class="chat-history">
+                        <ul class="m-b-0">
+                          <li *ngFor="let r of razgovor" class="clearfix">
+                            <div [className]="proveraKorisnika(r.posiljalac) ? 'message-data' : 'message-data text-right '"> 
+                              <img *ngIf="proveraKorisnika(r.posiljalac)" src="assets/{{ucesnik.slika}}" alt="">
+                              <span [className]="proveraKorisnika(r.posiljalac) ? 'message-data-time' : 'message-data-time tm'">
+                                {{r.vremeIspis}}
+                              </span>
+                              
+                            </div>
+                            
+                            <div [className]="proveraKorisnika(r.posiljalac) ? 'message my-message' : 'message other-message float-right'">
+                              {{r.text}}
+                            </div>
+                          </li>      
+                        </ul>
+                      </div>
+                      <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                            </div>
+                            <button name="azuriraj" class="btnPos" (click)="posalji()" mat-raised-button color="primary">Posalji</button>
+                            <span class="emp"></span>
+                            <input type="text" class="form-control" [(ngModel)]="novaPoruka"  placeholder="Unesi poruku...">                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    
+  <div class="foot">
+    <footer class="footer">
+        <p class="ft">
+            Copyright Nikola Krstic
+        </p>
+    </footer> 
+  </div>

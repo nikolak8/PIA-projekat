@@ -1,0 +1,97 @@
+<header class="p-3 header">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+  
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/ucesnik" class="nav-link px-2 text-white">Pocetna</a></li>
+        <li>
+          <div ngbDropdown class="d-inline-block">
+              <a id="dropdownBasic1" ngbDropdownToggle>
+                  Profil
+              </a>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <a routerLink="/ucesnik/mojProfil">Moj profil</a>
+                  <a routerLink="/ucesnik/mojeRadionice">Moje radionice</a>
+                  <a routerLink="/ucesnik/akcije">Moje akcije</a>
+                  <a routerLink="/ucesnik/svePoruke">Moje poruke</a>
+              </div>
+          </div>
+        </li>
+        <li><a routerLink="/ucesnik/sveRadionice" class="nav-link px-2 text-white">Radionice</a></li>
+        <li><a routerLink="/ucesnik/postaniOrganizator" class="nav-link px-2 text-white">Postani organizator</a></li>
+        <li><a routerLink="" (click) = "odjaviSe()" class="nav-link px-2 text-white">Odjavi se</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+  <form>
+    <div class="opt">
+    <span class="sort" >Prikazi:</span>
+    <select  name="prikazi" id="prikazi" [(ngModel)]="prikazi" class="sort">
+        <option value="komentar">Komentari</option>
+        <option value="lajk">Lajkovi</option>
+    </select>
+    <button  name="prikazi" mat-raised-button color="primary" (click)="inicijalizuj()" class="sort">Prikazi</button>
+  </div>
+  </form>
+  
+    <div class = 'content'>
+      <mat-tab-group>
+         <mat-tab class="tb">
+          <div *ngIf = "komentari?.length > 0" class="tab-content">
+              <div *ngFor="let k of komentari;index as i" class="tbr">
+                  
+                      <table class="table">
+                          <tr>
+                              <th>Radionica</th>
+                              <th>Tekst</th>
+                              <th>Obrisi</th>
+                              <th>Azuriraj</th>
+                          </tr>
+                          <tr>
+                              <td class="b"><span>{{k.naziv}}</span></td>
+                              <td class="b">{{k.komentar}}</td>
+                              <td>
+                                <button  name="obrisi" mat-raised-button color="primary" (click)="obrisi(k)" class="sort">Obrisi</button>
+                              </td>
+                              <td>
+                                <input type="text" [(ngModel)]="nov[i]">
+                                <button  name="azuriraj" mat-raised-button color="primary" (click)="azuriraj(k, i)" class="sort">Azuriraj</button>
+                              </td>
+                          </tr>
+                      </table>
+                  <hr>
+              </div>
+          </div> 
+          <div *ngIf = "svidjanjaRad?.length > 0" class="tab-content">
+            <div *ngFor="let s of svidjanjaRad" class="tbr">
+                
+                    <table class="table">
+                        <tr>
+                            <th>Radionica</th>
+                            <th>Povuci</th>
+                        </tr>
+                        <tr>
+                            <td class="b"><span>{{s.naziv}}</span></td>
+                            <td>
+                              <button  name="povuci" mat-raised-button color="primary" (click)="povuci(s)" class="sort">Povuci</button>
+                            </td>
+                        </tr>
+                    </table>
+                <hr>
+            </div>
+        </div> 
+         </mat-tab>
+      </mat-tab-group>
+      <h2 *ngIf="komentari?.length == 0 && porukaKom != ''">{{porukaKom}}</h2>
+      <h2 *ngIf="svidjanjaRad?.length == 0 && porukaLajk != ''">{{porukaLajk}}</h2>
+      </div>
+
+  <div class="foot">
+    <footer class="footer">
+        <p class="ft">
+            Copyright Nikola Krstic
+        </p>
+    </footer> 
+</div>

@@ -1,0 +1,83 @@
+<header class="p-3 header">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a routerLink="/admin" class="nav-link px-2 text-white">Pocetna</a></li>
+          <li>
+            <div ngbDropdown class="d-inline-block">
+                <a id="dropdownBasic1" ngbDropdownToggle>
+                    Korisnici
+                </a>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <a routerLink="/admin/korisnici">Pregled</a>
+                    <a routerLink="/admin/dodajKorisnika">Dodaj korisnika</a>
+                </div>
+            </div>
+          </li>
+          <li><a routerLink="/admin/zahtevi" class="nav-link px-2 text-white">Zahtevi</a></li>
+          <li>
+            <div ngbDropdown class="d-inline-block">
+                <a id="dropdownBasic1" ngbDropdownToggle>
+                    Radionice
+                </a>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <a routerLink="/admin/radionice">Pregled</a>
+                    <a routerLink="/admin/dodajRadionicu">Dodaj radionicu</a>
+                    <a routerLink="/admin/predlozi">Predlozi</a>
+                </div>
+            </div>
+          </li>
+          <li><a routerLink="" (click) = "odjaviSe()" class="nav-link px-2 text-white">Odjavi se</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <h1 class = 'naslov'>Predlozi radionica:</h1>
+  <h4 class = "naslov" *ngIf = "predlozi?.length == 0">Nema predloga!</h4>
+
+  <div class = 'content'>
+    <mat-tab-group>
+       <mat-tab class="tb">
+        <div *ngIf = "predlozi?.length > 0" class="tab-content">
+            <div *ngFor="let p of predlozi" class="tbr">
+                
+                    <table class="table">
+                        <tr>
+                            <th>Naziv</th>
+                            <th>Opis</th>
+                            <th>Mesto</th>
+                            <th>Datum</th>
+                            <th>Fotografija</th>
+                            <th>Predlozio</th>
+                            <th>Prihvati</th>
+                        </tr>
+                        <tr>
+                            <td class="b"><span>{{p.naziv}}</span></td>
+                            <td class="b">{{p.opis}}</td>
+                            <td class="b">{{p.mesto}}</td>
+                            <td class="b">{{p.datum|date:'yyyy-MM-dd'}}</td>
+                            <td>
+                                <img src="assets/{{p.glavnaSlika}}" alt=""> 
+                            </td>
+                            <td class="b">{{p.predlozio}}</td>
+                            <td *ngIf="p.moze">
+                                <button name="loginButton" mat-raised-button color="primary" (click)="prihvati(p)">Prihvati</button>
+                            </td>
+                        </tr>
+                    </table>
+                <hr>
+            </div>
+        </div> 
+       </mat-tab>
+    </mat-tab-group>
+    </div>
+
+  <div class="foot">
+    <footer class="footer">
+        <p class="ft">
+            Copyright Nikola Krstic
+        </p>
+    </footer> 
+</div>

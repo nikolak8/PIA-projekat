@@ -1,0 +1,55 @@
+<div class="navbar">
+    <div class="navig">
+        <span><a routerLink="/">Pocetna</a></span>
+        <span><a routerLink="/prijava">Prijavi se</a></span>
+        <span><a routerLink="/registracija">Registruj se</a></span>
+    </div>
+</div> 
+
+<h1 class = 'naslov'>Popularne radionice</h1>
+
+<div class = 'content'>
+    <mat-tab-group>
+       <mat-tab class="tb">
+        <div *ngIf = "radionice?.length > 0" class="tab-content">
+            <div *ngFor="let r of radionice" class="tbr">
+                
+                    <table class="table">
+                        <tr>
+                            <th>Naziv</th>
+                            <th>Opis</th>
+                            <th>Mesto</th>
+                            <th>Datum</th>
+                            <th>Fotografija</th>
+                            <th>Broj svidjanja</th>
+                        </tr>
+                        <tr>
+                            <td class="b"><span>{{r.naziv}}</span></td>
+                            <td class="b">{{r.opis}}</td>
+                            <td class="b">{{r.mesto}}</td>
+                            <td class="b">{{r.datum|date:'yyyy-MM-dd'}}</td>
+                            <td>
+                                <img src="assets/{{r.glavnaSlika}}"  alt=""> 
+                            </td>
+                            <td class="b">{{r.svidjanja.length}}</td>
+                        </tr>
+                    </table>
+                <hr>
+            </div>
+        </div> 
+       </mat-tab>
+    </mat-tab-group>
+    <div *ngIf = "radionice?.length == 0">
+        <h2>Ne postoji radionica.</h2>
+    </div>
+    </div>
+
+
+
+<div class="foot">
+    <footer class="footer">
+        <p class="ft">
+            Copyright Nikola Krstic
+        </p>
+    </footer> 
+    </div>

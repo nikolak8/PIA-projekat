@@ -1,0 +1,87 @@
+.header{
+    background: lightslategray;
+    text-align: center;
+    height: 70px;
+    padding-top: 8px;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: lightslategray;
+    color: white;
+    text-align: center;
+    padding-top:8px;
+  }
+
+  .navbar {
+    background: lightslategray;
+    height: 50px;
+  }
+  
+  .navbar  {
+    float: left;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-top: 12px;
+    width:100%;
+  }
+
+  a  {
+    float: left;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-top: 12px;
+    color:darkslategray;
+  } 
+
+  .dd{
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  #dropdownBasic1{
+    color:white;
+  }
+  
+  #dropdownBasic1:hover{
+    background-color: slategray;
+  }
+
+  .nav-link:hover{
+    background-color: slategray;
+  }
+
+  .navbar {
+    background-color: slategray;
+  }
+
+  input{
+    width:40%;
+    padding: 10px 15px;
+    margin: 7px;
+    display: inline-block;
+    border: 1px solid slategray;
+    border-radius: 4px;
+}
+
+.content{
+  text-align: center;
+}
+
+.poruka{
+  color:red;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+span{
+  font-size: larger;
+}

@@ -1,0 +1,130 @@
+.header{
+    background: lightslategray;
+    text-align: center;
+    height: 70px;
+    padding-top: 8px;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: lightslategray;
+    color: white;
+    text-align: center;
+    padding-top:8px;
+  }
+
+  .navbar {
+    background: lightslategray;
+    height: 50px;
+  }
+  
+  .navbar  {
+    float: left;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-top: 12px;
+    width:100%;
+  }
+
+  a  {
+    float: left;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-top: 12px;
+    color:darkslategray;
+  } 
+
+  .dd{
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  #dropdownBasic1{
+    color:white;
+  }
+  
+  #dropdownBasic1:hover{
+    background-color: slategray;
+  }
+
+  .nav-link:hover{
+    background-color: slategray;
+  }
+
+  .navbar {
+    background-color: slategray;
+  }
+
+  .cart{
+    padding-left: 40%;
+  }
+  
+  .tab-content{
+    min-height: 430px;
+    height: 430px;
+    overflow-y: auto;
+    background-color: var(--dark-color);
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width: 50%;
+    min-width: 600px;  
+}
+
+.content{
+    padding-left: 20px;
+}
+
+td, th{
+  width:140px;
+  word-wrap: break-word;
+}
+th{
+  text-align: center;
+}
+
+td{
+  font-size: 25;
+  text-align: center;
+}
+
+.b{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.ft{
+  text-shadow: 5rem;
+  font-size: 16px;
+}
+
+.naslov{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.galerija{
+  width:100%;
+}
+
+.galerija img{
+  width:20%;
+  min-width: 150px;
+}
+
+button{
+  background-color: lightgray;
+}
+
+img{
+  width: 140px;
+  height: 140px;
+}

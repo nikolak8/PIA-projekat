@@ -1,0 +1,65 @@
+<header class="p-3 header">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+  
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/ucesnik" class="nav-link px-2 text-white">Pocetna</a></li>
+        <li>
+          <div ngbDropdown class="d-inline-block">
+              <a id="dropdownBasic1" ngbDropdownToggle>
+                  Profil
+              </a>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <a routerLink="/ucesnik/mojProfil">Moj profil</a>
+                  <a routerLink="/ucesnik/mojeRadionice">Moje radionice</a>
+                  <a routerLink="/ucesnik/akcije">Moje akcije</a>
+                  <a routerLink="/ucesnik/svePoruke">Moje poruke</a>
+              </div>
+          </div>
+        </li>
+        <li><a routerLink="/ucesnik/sveRadionice" class="nav-link px-2 text-white">Radionice</a></li>
+        <li><a routerLink="/ucesnik/postaniOrganizator" class="nav-link px-2 text-white">Postani organizator</a></li>
+        <li><a routerLink="" (click) = "odjaviSe()" class="nav-link px-2 text-white">Odjavi se</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div>
+<div class="dd">
+  <h3>Podaci o korisniku:</h3>
+  <span>{{poruka}}</span><br>
+  <form>
+    <img src="assets/{{slika}}" alt="">
+    <br>
+  <span>Korisnicko ime</span><br>
+  <input type="text" [(ngModel)]="korisnickoIme" name="korisnickoIme">
+  <br>
+  <span>Ime</span><br>
+  <input type="text" [(ngModel)]="ime" name="ime">
+  <br>
+  <span>Prezime</span><br>
+  <input type="text" [(ngModel)]="prezime" name="prezime">
+  <br>
+  <span>Email</span><br>
+  <input type="text" [(ngModel)]="email" name="email">
+  <br>
+  <span>Telefon</span><br>
+  <input type="text" [(ngModel)]="telefon" name="telefon">
+  <br>
+  <span>Slika</span><br>
+  <input type="file" name="slika" accept="image/png, image/jpeg" (change)="izaberiSliku($event)" [(ngModel)]="slika">
+  <br>
+  <button name="azuriraj" mat-raised-button color="primary" (click)="azuriraj()">Azuriraj podatke</button>
+</form>
+</div>
+
+
+<div class="foot">
+  <footer class="footer">
+      <p class="ft">
+          Copyright Nikola Krstic
+      </p>
+  </footer> 
+</div>
+  

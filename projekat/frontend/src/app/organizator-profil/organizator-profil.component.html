@@ -1,0 +1,68 @@
+<header class="p-3 header">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+  
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/organizator" class="nav-link px-2 text-white">Pocetna</a></li>
+        <li><a routerLink="/organizator/profil" class="nav-link px-2 text-white">Profil</a></li>
+        <li>
+          <div ngbDropdown class="d-inline-block">
+              <a id="dropdownBasic1" ngbDropdownToggle>
+                  Radionice
+              </a>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <a routerLink="/organizator/sveRadionice">Moje radionice</a>
+                  <a routerLink="/organizator/dodajRadionicu">Dodaj</a>    
+              </div>
+          </div>
+        </li>
+        <li><a routerLink="" (click) = "odjaviSe()" class="nav-link px-2 text-white">Odjavi se</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+  <h1 class = 'naslov'>Moje radionice</h1>
+
+  <div class = 'content'>
+    <mat-tab-group>
+       <mat-tab class="tb">
+        <div *ngIf = "mojeRadionice?.length > 0" class="tab-content">
+            <div *ngFor="let r of mojeRadionice" class="tbr">
+                
+                    <table class="table">
+                        <tr>
+                            <th>Naziv</th>
+                            <th>Opis</th>
+                            <th>Mesto</th>
+                            <th>Datum</th>
+                            <th>Fotografija</th>
+                        </tr>
+                        <tr>
+                            <td class="b"><span>{{r.naziv}}</span></td>
+                            <td class="b">{{r.opis}}</td>
+                            <td class="b">{{r.mesto}}</td>
+                            <td class="b">{{r.datum|date:'yyyy-MM-dd'}}</td>
+                            <td>
+                                <img src="assets/{{r.glavnaSlika}}" alt=""> 
+                            </td>
+                            <td >
+                              <button name="loginButton" mat-raised-button color="primary" (click)="poruke(r._id)">Poruke</button>
+                            </td>
+                        </tr>
+                    </table>
+                <hr>
+            </div>
+        </div> 
+       </mat-tab>
+    </mat-tab-group>
+    </div>
+
+
+  <div class="foot">
+    <footer class="footer">
+        <p class="ft">
+            Copyright Nikola Krstic
+        </p>
+    </footer> 
+</div>

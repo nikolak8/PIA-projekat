@@ -1,0 +1,129 @@
+.header{
+    background: lightslategray;
+    text-align: center;
+    height: 70px;
+    padding-top: 8px;
+  }
+  
+  .tab-content{
+  min-height: 430px;
+  height: 430px;
+  overflow-y: auto;
+  background-color: var(--dark-color);
+  padding-left: 15px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  width: 60%;
+  min-width: 650px;  
+  }
+  
+  .footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: lightslategray;
+    color: white;
+    text-align: center;
+    padding-top:8px;
+  }
+  
+  .navbar {
+    background: lightslategray;
+    height: 50px;
+  }
+  
+  .navbar  {
+    float: left;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-top: 12px;
+    width:100%;
+  }
+  
+  a  {
+    float: left;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-top: 12px;
+    color:darkslategray;
+  } 
+  
+  #dropdownBasic1{
+    color:white;
+  }
+  
+  #dropdownBasic1:hover{
+    background-color: slategray;
+  }
+  
+  .nav-link:hover{
+    background-color: slategray;
+  }
+  
+  .navbar {
+    background-color: slategray;
+  }
+  
+  td, th{
+    
+    width:140px;
+    word-wrap: break-word;
+  }
+  th{
+    text-align: center;
+  }
+  
+  td{
+    font-size: 25;
+    text-align: center;
+  }
+  
+  .b{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  img{
+    padding-left: 7px;
+    max-width: 200px;
+  }
+  
+  .ft{
+    text-shadow: 5rem;
+    font-size: 16px;
+  }
+  span{
+    padding-left: 15px;
+  }
+  
+  input{
+    width: 130px;
+    margin: 7px;
+    display: inline-block;
+    border: 1px solid slategray;
+    border-radius: 4px;
+  } 
+  
+  .naslov{
+  padding-left:10%;
+  padding-top: 10px;
+  }
+  
+  button{
+  background-color: lightgray;
+  }
+  
+  .sort{
+    margin-left: 5px;
+    font-size: 18px;
+  }
+
+  .sve{
+    padding-left: 15%;
+  }

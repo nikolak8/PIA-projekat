@@ -1,0 +1,93 @@
+<header class="p-3 header">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+  
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/organizator" class="nav-link px-2 text-white">Pocetna</a></li>
+        <li><a routerLink="/organizator/profil" class="nav-link px-2 text-white">Profil</a></li>
+        <li>
+          <div ngbDropdown class="d-inline-block">
+              <a id="dropdownBasic1" ngbDropdownToggle>
+                  Radionice
+              </a>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <a routerLink="/organizator/sveRadionice">Moje radionice</a>
+                  <a routerLink="/organizator/dodajRadionicu">Dodaj</a>    
+              </div>
+          </div>
+        </li>
+        <li><a routerLink="" (click) = "odjaviSe()" class="nav-link px-2 text-white">Odjavi se</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+  <div class="container">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card chat-app">
+              <div id="plist" class="people-list">
+                <div *ngIf="poruke?.length > 0">
+                  Razgovori
+                </div>
+                <ul class="list-unstyled chat-list mt-2 mb-0">
+                    <li *ngFor="let p of poruke; index as i" class="clearfix">
+                        <img src="assets/{{p.slika1}}" alt="avatar">
+                        <div (click)="detaljiCet(i)" class="about">
+                            <div class="name"><b>{{p.ime1}} {{p.prezime1}}</b></div>                                           
+                        </div>
+                    </li>
+                </ul>
+            </div>
+                <div *ngIf="razgovor?.length>0" class="chat">
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a>
+                                  <img src="assets/{{ucesnik.slika}}" alt="avatar">
+                                </a>
+                                <div class="chat-about">
+                                  <h6 class="m-b-0">{{ucesnik.ime}} {{ucesnik.prezime}}</h6>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                    <div *ngIf="razgovor?.length>0" class="chat-history">
+                      <ul class="m-b-0">
+                        <li *ngFor="let r of razgovor" class="clearfix">
+                          <div [className]="proveraKorisnika(r.posiljalac) ? 'message-data' : 'message-data text-right '"> 
+                            <img *ngIf="proveraKorisnika(r.posiljalac)" src="assets/{{organizator.slika}}" alt="">
+                            <span [className]="proveraKorisnika(r.posiljalac) ? 'message-data-time' : 'message-data-time tm'">
+                            </span>
+                            {{r.vremeIspis}}
+                          </div>  
+                          <div [className]="proveraKorisnika(r.posiljalac) ? 'message my-message' : 'message other-message float-right'">
+                            {{r.text}}
+                          </div>
+                        </li>      
+                      </ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                      <div class="input-group mb-0">
+                          <div class="input-group-prepend">
+                          </div>
+                          <button name="azuriraj" class="btnPos" (click)="posalji()" mat-raised-button color="primary">Posalji</button>
+                          <span class="emp"></span>
+                          <input type="text" class="form-control" [(ngModel)]="novaPoruka"  placeholder="Unesi poruku...">                                    
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div> 
+
+      <h2 *ngIf="poruke?.length == 0">Nema poruka</h2>
+
+
+  <div class="foot">
+    <footer class="footer">
+        <p class="ft">
+            Copyright Nikola Krstic
+        </p>
+    </footer> 
+</div>

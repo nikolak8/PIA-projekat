@@ -1,0 +1,67 @@
+
+<div class="navbar">
+    <div class="navig">
+        <span><a routerLink="/">Pocetna</a></span>
+        <span><a routerLink="/prijava">Prijavi se</a></span>
+        <span><a routerLink="/registracija">Registruj se</a></span>
+    </div>
+</div> 
+
+<div class="content">
+    <h1>Registracija</h1>
+    <span class="poruka">{{poruka}}</span>
+    <br>
+    <form>
+        <input type="text" [(ngModel)]="ime" name="ime" placeholder="Unesite ime..." required="true">
+        <br>
+        <input type="text" [(ngModel)]="prezime" name="prezime" placeholder="Unesite prezime..." required="true">
+        <br>
+        <input type="text" [(ngModel)]="korisnickoIme" name="korisnickoIme" placeholder="Unesite korisnicko ime..." required="true">
+        <br>
+        <input  type="password" [(ngModel)]="lozinka" name="lozinka" placeholder="Unesite lozinku..." required="true">
+        <br>
+        <input type="password" [(ngModel)]="lozinka2" name="lozinka2" placeholder="Unesite ponovljenu lozinku..." required="true">
+        <br>
+        <input type="text" [(ngModel)]="telefon" name="telefon" placeholder="Unesite broj telefona..." required="true">
+        <br>
+        <input type="text" [(ngModel)]="email" name="email" placeholder="Unesite email adresu..." required="true">
+        <br>
+        <select name="tip" id="tip" [(ngModel)]="tip" required="true">
+            <option value="1">Organizator</option>
+            <option value="2">Ucesnik</option>
+        </select>
+        <br>
+        <input type="file" name="slika" accept="image/png, image/jpeg" (change)="izaberiSliku($event)" [(ngModel)]="slika">
+        <br>
+        <button *ngIf="tip!=1" name="registerButton" mat-raised-button color="primary" (click)="registracija()">Registruj se</button>
+        <br>
+        <input type="text" *ngIf="tip==1" [(ngModel)]="nazivOrganizacije" name="nazivOrganizacije" placeholder="Unesite naziv organizacije...">
+        <br>
+        <input type="text" *ngIf="tip==1" [(ngModel)]="drzavaOrganizacije" name="drzavaOrganizacije" placeholder="Unesite drzavu organizacije...">
+        <br>
+        <input type="text" *ngIf="tip==1" [(ngModel)]="gradOrganizacije" name="gradOrganizacije" placeholder="Unesite grad organizacije...">
+        <br>
+        <input type="text" *ngIf="tip==1" [(ngModel)]="postanskiBroj" name="postanskiBroj" placeholder="Unesite postanski broj..." >
+        <br>
+        <input type="text" *ngIf="tip==1" [(ngModel)]="ulicaOrganizacije" name="ulicaOrganizacije" placeholder="Unesite ulicu...">
+        <br>
+        <input type="number" *ngIf="tip==1" [(ngModel)]="brojUlice" name="brojUlice" placeholder="Unesite broj...">
+        <br>
+        <input type="text" *ngIf="tip==1" [(ngModel)]="maticniBrojOrg" name="maticniBrojOrg" placeholder="Unesite maticni broj..." >
+        <br>
+    </form>
+    
+    <button *ngIf="tip==1" name="registerButton" mat-raised-button color="primary" (click)="registracija()">Registruj se</button>
+    <br>
+</div>
+
+<div class="foot">
+<footer class="footer">
+    <p class="ft">
+        Copyright Nikola Krstic
+    </p>
+</footer> 
+</div>
+
+
+

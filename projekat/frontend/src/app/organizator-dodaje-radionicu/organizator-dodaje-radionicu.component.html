@@ -1,0 +1,78 @@
+<header class="p-3 header">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+  
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/organizator" class="nav-link px-2 text-white">Pocetna</a></li>
+        <li><a routerLink="/organizator/profil" class="nav-link px-2 text-white">Profil</a></li>
+        <li>
+          <div ngbDropdown class="d-inline-block">
+              <a id="dropdownBasic1" ngbDropdownToggle>
+                  Radionice
+              </a>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <a routerLink="/organizator/sveRadionice">Moje radionice</a>
+                  <a routerLink="/organizator/dodajRadionicu">Dodaj</a>    
+              </div>
+          </div>
+        </li>
+        <li><a routerLink="" (click) = "odjaviSe()" class="nav-link px-2 text-white">Odjavi se</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+  <div class="content">
+    <h1>Predlozi radionicu</h1>
+    <h4>{{poruka}}</h4>
+    <form>
+        <img *ngIf="dodaoFajl == 'jeste'" src="assets/{{slikaSablon}}" alt="">
+        <br>
+        <input type="text"  name="naziv" [(ngModel)]="naziv" placeholder="Unesite naziv radionice..." required="true">
+        <br>
+        <input  type="text"  name="mesto" [(ngModel)]="mesto" placeholder="Unesite mesto..." required="true">
+        <br>
+        <input  type="date"  name="datum" [(ngModel)]="datum" required="true">
+        <br>
+        <input  type="text"  name="opis" [(ngModel)]="opis" placeholder="Unesite kratak opis..." required="true">
+        <br>
+        <input  type="text"  name="dugacakOpis" [(ngModel)]="dugacakOpis" placeholder="Unesite duzi opis..." required="true">
+        <br>
+        <span>Glavna slika:</span> <br>
+        <input  type="file"  name="slika" (change)="izaberiSliku($event)">
+        <br>
+        <span>Galerija:</span><br>
+        <input type="file" multiple name="galerija" (change)="izaberiGaleriju($event)">
+        <br>
+        <span>Uvezi sablon:</span> <br>
+        <input  type="file"  name="slika" (change)="izaberiSablon($event)">
+        <br>
+        <div *ngIf="dodaoFajl == 'jeste'" class="galerija">
+            <h2 style="text-align:center">Galerija</h2>
+            <ngb-carousel style="text-align:center;" class="galerija" [showNavigationArrows]="false" [interval]="5000">
+              <ng-template ngbSlide *ngFor="let g of galerija">
+                <button name="azuriraj" mat-raised-button color="primary" (click)="ukloni(g.slika)">Ukloni</button>
+                <div>
+                  <img  src="assets/{{g.slika}}" alt="Random first slide" />
+                  
+                  <br>
+                </div>
+              </ng-template>
+      
+            </ngb-carousel>
+          </div>
+        
+    </form>
+    
+    <button name="loginButton" mat-raised-button color="primary" (click)="predlozi()">Predlozi</button>
+    <br>
+</div>
+
+
+  <div class="foot">
+    <footer class="footer">
+        <p class="ft">
+            Copyright Nikola Krstic
+        </p>
+    </footer> 
+</div>

@@ -1,0 +1,117 @@
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: lightslategray;
+    color: white;
+    text-align: center;
+    padding-top:8px;
+  }
+
+
+  .empty{
+    width:10px;
+  }
+
+  .opt{
+    margin-left:25px;
+  }
+
+  .sort{
+    margin-left: 5px;
+    font-size: 18px;
+  }
+
+.header{
+    background: lightslategray;
+    text-align: center;
+    height: 50px;
+    padding-top: 8px;
+}
+
+.tab-content{
+    min-height: 400px;
+    height: 400px;
+    overflow-y: auto;
+    background-color: var(--dark-color);
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width: 60%;
+    min-width: 600px;  
+}
+
+.content{
+    padding-left: 20px;
+}
+
+.naslov{
+    padding-left:10%;
+    padding-top: 10px;
+}
+
+
+
+td, th{
+    width:140px;
+    word-wrap: break-word;
+}
+th{
+    text-align: center;
+}
+
+td{
+    font-size: 25;
+    text-align: center;
+}
+
+.b{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+img{
+    padding-left: 7px;
+    max-width: 180px;
+    max-height: 180;
+}
+
+.ft{
+    text-shadow: 5rem;
+    font-size: 16px;
+}
+
+.navbar {
+    overflow: hidden;
+    background: lightslategray;
+    height: 70px;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-top: 12px;
+  }
+  
+  .navbar a:hover {
+    background-color: slategray;
+  }
+  
+  span{
+    padding-left: 15px;
+  }
+
+  input{
+    width: 130px;
+    margin: 7px;
+    display: inline-block;
+    border: 1px solid slategray;
+    border-radius: 4px;
+}  
+

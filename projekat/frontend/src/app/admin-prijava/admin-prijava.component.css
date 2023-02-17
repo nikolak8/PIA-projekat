@@ -1,0 +1,87 @@
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: lightslategray;
+    color: white;
+    text-align: center;
+    padding-top:8px;
+  }
+
+.header{
+    background: lightslategray;
+    text-align: center;
+    height: 50px;
+    padding-top: 8px;
+}
+
+
+.ft{
+    text-shadow: 5rem;
+    font-size: 16px;
+}
+
+.navbar {
+    overflow: hidden;
+    background: lightslategray;
+    height: 70px;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-top: 12px;
+  }
+  
+  .navbar a:hover {
+    background-color: slategray;
+  }
+  
+  span{
+    padding-left: 15px;
+  }
+
+  .content{
+    text-align: center;
+  }
+
+  .t{
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  
+input{
+    width:40%;
+    padding: 10px 15px;
+    margin: 7px;
+    display: inline-block;
+    border: 1px solid slategray;
+    border-radius: 4px;
+}
+
+.pass{
+    padding-left: 54px;
+}
+
+.poruka{
+  color:red;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+label{
+  font-size: 20px;
+}
+
+h1{
+  padding-top:40px;
+}
+  
+

@@ -1,0 +1,62 @@
+<header class="p-3 header">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a routerLink="/admin" class="nav-link px-2 text-white">Pocetna</a></li>
+          <li>
+            <div ngbDropdown class="d-inline-block">
+                <a id="dropdownBasic1" ngbDropdownToggle>
+                    Korisnici
+                </a>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <a routerLink="/admin/korisnici">Pregled</a>
+                    <a routerLink="/admin/dodajKorisnika">Dodaj korisnika</a>
+                </div>
+            </div>
+          </li>
+          <li><a routerLink="/admin/zahtevi" class="nav-link px-2 text-white">Zahtevi</a></li>
+          <li>
+            <div ngbDropdown class="d-inline-block">
+                <a id="dropdownBasic1" ngbDropdownToggle>
+                    Radionice
+                </a>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <a routerLink="/admin/radionice">Pregled</a>
+                    <a routerLink="/admin/dodajRadionicu">Dodaj radionicu</a>
+                    <a routerLink="/admin/predlozi">Predlozi</a>
+                </div>
+            </div>
+          </li>
+          <li><a routerLink="" (click) = "odjaviSe()" class="nav-link px-2 text-white">Odjavi se</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="content">
+    <h1>Promeni lozinku</h1>
+    <form>
+        <input type="password" [(ngModel)]="staraLozinka" name="staraLozinka" placeholder="Unesite staru lozinku..." required="true">
+        <br>
+        <input  type="password" [(ngModel)]="novaLozinka1" name="novaLozinka1" placeholder="Unesite lozinku..." required="true">
+        <br>
+        <input  type="password" [(ngModel)]="novaLozinka2" name="novaLozinka2" placeholder="Unesite ponovljenu lozinku..." required="true">
+        <br>
+    </form>
+    
+    <button name="loginButton" mat-raised-button color="primary" (click)="promeniLozinku()">Promeni lozinku</button>
+    <br>
+    <span class="poruka">{{poruka}}</span>
+</div>
+
+
+<div class="foot">
+    <footer class="footer">
+        <p class="ft">
+            Copyright Nikola Krstic
+        </p>
+    </footer> 
+</div>
+    
+
